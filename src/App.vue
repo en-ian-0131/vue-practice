@@ -49,7 +49,13 @@
       <div class="col-auto border border-primary">
         <h3>checkBox</h3>
         <div class="form-check">
-          <input type="checkbox" name="123" id="123" v-model="checked"  class="form-check-input"/>
+          <input
+            type="checkbox"
+            name="123"
+            id="123"
+            v-model="checked"
+            class="form-check-input"
+          />
           <label for="123" class="form-check-label">123</label>
           <div>{{ checked }}</div>
         </div>
