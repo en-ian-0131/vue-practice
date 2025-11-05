@@ -5,7 +5,7 @@
   </ul>
 
   <div>{{ sum }}</div>
-  <button @click="add">plus</button>
+  <button @click="increatment">plus</button>
 </template>
 
 <script lang="ts">
@@ -25,8 +25,21 @@ import {
 } from "vue";
 import type { Persons } from "./person";
 import { useSum } from "./hooks/useSum";
+import { useCountStore } from "./store/count";
+import { storeToRefs } from "pinia";
 
-const { sum, add } = useSum();
+const countStore = useCountStore();
+const { sum } = storeToRefs(countStore);
+
+const increatment = () => {
+  countStore.sum += 1;
+};
+//當store數據生變化時觸發
+countStore.$subscribe((mutate, state) => {
+  console.log("countStore數據生變化時觸發", mutate, state);
+});
+
+// const { sum, add } = useSum();
 //接收props
 const a = defineProps<{ list?: Persons[] }>();
 console.log("a", a.list);

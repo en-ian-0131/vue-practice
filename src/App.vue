@@ -1,7 +1,8 @@
 <template>
   <Person a="哈哈" :list="personList" />
-  <RouterLink to="/" active-class="" />
-  <RouterView />
+  <!-- <RouterLink to="/" active-class="" />
+  <RouterView /> -->
+
 </template>
 
 <script setup lang="ts">
