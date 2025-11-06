@@ -1,9 +1,7 @@
 <template>
   <div class="fatherClass">
     <div>Father Com</div>
-    <div>擁有車子：{{ car }}</div>
-    <div>v小孩給的玩具：{{ getChildToy }}</div>
-    <ChildCom :sendToy="getToy" />
+    <ChildCom @haha="fatherFn" />
   </div>
 </template>
 
@@ -14,13 +12,10 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import ChildCom from "./ChildCom.vue";
-const car = ref("賓士");
-const getChildToy = ref("");
 
-const getToy = (value: string) => {
-    getChildToy.value = value
+const fatherFn = (value: string) => {
+  console.log("觸發Fn", value);
 };
 </script>
 

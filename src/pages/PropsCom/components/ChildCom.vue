@@ -1,8 +1,7 @@
 <template>
   <div class="childClass">
     <div>Child Com</div>
-    <div>擁有玩具：{{ toy }}</div>
-    <button type="button" @click="sendToy(toy)">給爸爸玩具</button>
+    <button @click="emit('haha', '666')">Test</button>
   </div>
 </template>
 
@@ -13,10 +12,11 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { ref } from "vue";
-defineProps(["getChildToy", "sendToy"]);
+import { onMounted } from "vue";
 
-const toy = ref("奧特曼");
+const emit = defineEmits(["haha"]);
+
+onMounted(() => setTimeout(() => emit("haha"), 2000));
 </script>
 
 <style scoped>
