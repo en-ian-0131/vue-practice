@@ -8,7 +8,7 @@ import { createPinia } from "pinia";
 const vm = createApp(App);
 // const vm = createApp(KKday);
 const pinia = createPinia()
-vm.use(pinia)
-vm.use(router)
+// vm.use(pinia)
+// vm.use(router)
 
 vm.mount("#app");
