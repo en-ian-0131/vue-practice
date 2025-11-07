@@ -1,22 +1,22 @@
 <template>
   <div class="childClass">
-    <div>Child Com</div>
-    <button @click="emit('haha', '666')">Test</button>
+    <div>Child Com1</div>
+    <div>{{ toy }}</div>
+    <button @click="emitter.emit('send-car', toy)">send toy</button>
   </div>
 </template>
 
 <script lang="ts">
 export default {
-  name: "ChildCom",
+  name: "ChildCom1",
 };
 </script>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
+import emitter from "@/tools/emitter";
+import { ref } from "vue";
 
-const emit = defineEmits(["haha"]);
-
-onMounted(() => setTimeout(() => emit("haha"), 2000));
+const toy = ref("變形金剛");
 </script>
 
 <style scoped>

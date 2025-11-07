@@ -1,7 +1,8 @@
 <template>
   <div class="fatherClass">
     <div>Father Com</div>
-    <ChildCom @haha="fatherFn" />
+    <ChildCom1 @haha="fatherFn" />
+    <ChildCom2 @haha="fatherFn" />
   </div>
 </template>
 
@@ -12,7 +13,8 @@ export default {
 </script>
 
 <script setup lang="ts">
-import ChildCom from "./ChildCom.vue";
+import ChildCom1 from "./ChildCom1.vue";
+import ChildCom2 from "./ChildCom2.vue";
 
 const fatherFn = (value: string) => {
   console.log("觸發Fn", value);
