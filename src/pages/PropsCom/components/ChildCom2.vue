@@ -15,13 +15,15 @@ export default {
 
 <script setup lang="ts">
 import emitter from "@/tools/emitter";
-import { ref } from "vue";
+import { onUnmounted, ref } from "vue";
 
 const car = ref("神腦");
 const toy = ref("");
-emitter.on("send-car", (val:string) => {
+emitter.on("send-car", (val: string) => {
   toy.value = val;
 });
+
+onUnmounted(() => emitter.off("send-car"));
 </script>
 
 <style scoped>
