@@ -1,7 +1,7 @@
 <template>
-  <FatherCom />
+  <Grandfather />
 </template>
 
 <script setup lang="ts">
-import FatherCom from "./pages/vModel/FatherCom.vue";
+import Grandfather from "./pages/attrs/Grandfather.vue";
 </script>
