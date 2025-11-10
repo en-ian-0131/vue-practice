@@ -1,7 +1,7 @@
 <template>
-  <Grandfather />
+  <Father />
 </template>
 
 <script setup lang="ts">
-import Grandfather from "./pages/attrs/Grandfather.vue";
+import Father from "./pages/refs/Father.vue";
 </script>
