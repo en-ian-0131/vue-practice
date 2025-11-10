@@ -1,7 +1,7 @@
 <template>
-  <PropsCom />
+  <FatherCom />
 </template>
 
 <script setup lang="ts">
-import PropsCom from "./pages/PropsCom/index.vue";
+import FatherCom from "./pages/vModel/FatherCom.vue";
 </script>
