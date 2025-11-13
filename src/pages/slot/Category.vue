@@ -1,7 +1,7 @@
 <template>
   <div class="category">
-    <h2>{{ title }}</h2>
-    <slot>默認插槽內容</slot>
+    <slot name="s1" />
+    <slot name="s2" />
   </div>
 </template>
 
@@ -11,9 +11,7 @@ export default {
 };
 </script>
 
-<script setup lang="ts">
-defineProps(["title"]);
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .category {
@@ -23,10 +21,5 @@ defineProps(["title"]);
   border-radius: 10px;
   height: 500px;
   width: 200px;
-}
-h2 {
-  background-color: orange;
-  text-align: center;
-  font-weight: 700;
 }
 </style>

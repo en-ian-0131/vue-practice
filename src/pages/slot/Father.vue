@@ -2,16 +2,31 @@
   <div class="father">
     <div>Father</div>
     <div class="content">
-      <Category title="熱門遊戲列表">
-        <ul v-for="g in games" :key="g.id">
-          <li>{{ g.name }}</li>
-        </ul>
+      <Category>
+        <template v-slot:s2>
+          <ul v-for="g in games" :key="g.id">
+            <li>{{ g.name }}</li>
+          </ul>
+        </template>
+        <template v-slot:s1>
+          <h2>熱門遊戲列表</h2>
+        </template>
       </Category>
-      <Category title="今日美食城市">
-        <img :src="imgUrl" alt="" />
+      <Category>
+        <template v-slot:s2>
+          <img :src="imgUrl" alt="" />
+        </template>
+        <template v-slot:s1>
+          <h2>今日美食城市</h2>
+        </template>
       </Category>
-      <Category title="今日影視推薦">
-        <video :src="videoUrl" controls></video>
+      <Category>
+        <template #s2>
+          <video :src="videoUrl" controls />
+        </template>
+        <template #s1>
+          <h2>今日影視推薦</h2>
+        </template>
       </Category>
     </div>
   </div>
@@ -26,7 +41,7 @@ export default {
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import Category from "./Category.vue";
-import video from '@/assets/video/bosu_tutorial.mp4'
+import video from "@/assets/video/bosu_tutorial.mp4";
 
 let games = reactive([
   {
@@ -66,5 +81,10 @@ let videoUrl = ref(video);
 img,
 video {
   width: 100%;
+}
+h2 {
+  background-color: orange;
+  text-align: center;
+  font-weight: 700;
 }
 </style>
