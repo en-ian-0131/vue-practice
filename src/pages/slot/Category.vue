@@ -1,7 +1,6 @@
 <template>
   <div class="category">
-    <slot name="s1" />
-    <slot name="s2" />
+    <slot name="game" :yoxi="games"></slot>
   </div>
 </template>
 
@@ -11,7 +10,27 @@ export default {
 };
 </script>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { reactive } from "vue";
+let games = reactive([
+  {
+    id: "1",
+    name: "英雄聯盟",
+  },
+  {
+    id: "2",
+    name: "寶可夢",
+  },
+  {
+    id: "3",
+    name: "馬力歐賽車",
+  },
+  {
+    id: "4",
+    name: "海賊無雙",
+  },
+]);
+</script>
 
 <style scoped>
 .category {
