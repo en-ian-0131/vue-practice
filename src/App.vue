@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import Father from "./pages/customRef/Father.vue";
+import Father from "./pages/teleport/Father.vue";
 </script>
