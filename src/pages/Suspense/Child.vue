@@ -1,6 +1,8 @@
 <template>
   <div class="childClass">
-    <div>Child</div>
+    <div>Child{{ x }}</div>
+    <h2 v-beauty="sum">我是小孩</h2>
+    <Hello />
   </div>
 </template>
 
@@ -12,9 +14,12 @@ export default {
 
 <script setup lang="ts">
 import axios from "axios";
+import { ref } from "vue";
 
 const { data } = await axios.get("...");
 console.log(data);
+
+let sum = ref(0);
 </script>
 
 <style scoped>
